@@ -9,21 +9,122 @@
         <!--Repo Results View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="RepoResultsViewController" customModule="GithubDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vXZ-lx-hvc" customClass="RepoResultsViewController" customModule="GithubDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EjE-mD-h8X">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepoFeedTableViewCell" id="yln-8s-fZR" customClass="RepoFeedTableViewCell" customModule="GithubDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yln-8s-fZR" id="BON-Jr-6Ic">
+                                            <frame key="frameInset" width="375" height="149"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBn-lc-7Aa">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFZ-lm-VQP">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Qn-L9-wnN">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ry-rk-pgs">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fork" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbh-23-ive">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fork" translatesAutoresizingMaskIntoConstraints="NO" id="uUI-l2-vDJ">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="EC4-7A-sT8"/>
+                                                        <constraint firstAttribute="width" constant="20" id="VN2-wO-mFV"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="PaT-KN-Heb">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="UOw-WN-poQ"/>
+                                                        <constraint firstAttribute="height" constant="20" id="e86-bB-jK9"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mv1-Wn-z8t">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="76l-gr-b9k"/>
+                                                        <constraint firstAttribute="width" constant="60" id="tc3-Is-MQo"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mv1-Wn-z8t" firstAttribute="leading" secondItem="RFZ-lm-VQP" secondAttribute="leading" id="9aq-PJ-ZeF"/>
+                                                <constraint firstItem="uUI-l2-vDJ" firstAttribute="centerY" secondItem="nbh-23-ive" secondAttribute="centerY" id="ANG-Vy-rCN"/>
+                                                <constraint firstItem="RFZ-lm-VQP" firstAttribute="top" secondItem="sBn-lc-7Aa" secondAttribute="bottom" constant="8" id="B2s-zF-djD"/>
+                                                <constraint firstItem="PaT-KN-Heb" firstAttribute="centerY" secondItem="6Ry-rk-pgs" secondAttribute="centerY" id="EQc-Cz-i3K"/>
+                                                <constraint firstAttribute="trailing" secondItem="nbh-23-ive" secondAttribute="trailing" constant="8" id="JE0-3s-Q5g"/>
+                                                <constraint firstItem="sBn-lc-7Aa" firstAttribute="top" secondItem="BON-Jr-6Ic" secondAttribute="top" constant="8" id="MZ7-RY-k0A"/>
+                                                <constraint firstItem="uUI-l2-vDJ" firstAttribute="leading" secondItem="6Ry-rk-pgs" secondAttribute="trailing" constant="10" id="QqI-zS-o8Q"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mv1-Wn-z8t" secondAttribute="bottom" constant="12" id="RWh-dh-xVU"/>
+                                                <constraint firstItem="7Qn-L9-wnN" firstAttribute="leading" secondItem="mv1-Wn-z8t" secondAttribute="trailing" constant="10" id="RmR-uZ-5VM"/>
+                                                <constraint firstItem="sBn-lc-7Aa" firstAttribute="leading" secondItem="BON-Jr-6Ic" secondAttribute="leading" constant="8" id="Vsu-S7-IDE"/>
+                                                <constraint firstAttribute="trailing" secondItem="7Qn-L9-wnN" secondAttribute="trailing" constant="8" id="ZeQ-f2-5sr"/>
+                                                <constraint firstItem="7Qn-L9-wnN" firstAttribute="top" secondItem="mv1-Wn-z8t" secondAttribute="top" id="a8H-4J-xbB"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7Qn-L9-wnN" secondAttribute="bottom" constant="12" id="fe9-I1-Y86"/>
+                                                <constraint firstItem="nbh-23-ive" firstAttribute="centerY" secondItem="sBn-lc-7Aa" secondAttribute="centerY" id="hus-IK-9Fs"/>
+                                                <constraint firstItem="RFZ-lm-VQP" firstAttribute="leading" secondItem="sBn-lc-7Aa" secondAttribute="leading" id="jbC-nJ-Z8m"/>
+                                                <constraint firstItem="PaT-KN-Heb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sBn-lc-7Aa" secondAttribute="trailing" constant="8" id="mMf-Fx-OVa"/>
+                                                <constraint firstItem="nbh-23-ive" firstAttribute="leading" secondItem="uUI-l2-vDJ" secondAttribute="trailing" constant="5" id="oFe-R1-1cU"/>
+                                                <constraint firstItem="mv1-Wn-z8t" firstAttribute="top" secondItem="RFZ-lm-VQP" secondAttribute="bottom" constant="8" id="rA0-NF-HNm"/>
+                                                <constraint firstItem="6Ry-rk-pgs" firstAttribute="leading" secondItem="PaT-KN-Heb" secondAttribute="trailing" constant="5" id="rAj-2W-8kf"/>
+                                                <constraint firstItem="6Ry-rk-pgs" firstAttribute="centerY" secondItem="uUI-l2-vDJ" secondAttribute="centerY" id="tm6-vU-0HL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorImageView" destination="mv1-Wn-z8t" id="E4Q-qK-Hwr"/>
+                                            <outlet property="authorLabel" destination="RFZ-lm-VQP" id="fxv-Pv-8F5"/>
+                                            <outlet property="descriptionLabel" destination="7Qn-L9-wnN" id="BP6-6r-nO5"/>
+                                            <outlet property="forkImageView" destination="uUI-l2-vDJ" id="3Sm-Ev-3wy"/>
+                                            <outlet property="forkLabel" destination="nbh-23-ive" id="UgW-Tm-PSF"/>
+                                            <outlet property="starImageView" destination="PaT-KN-Heb" id="z38-wO-V5P"/>
+                                            <outlet property="starLabel" destination="6Ry-rk-pgs" id="Ooq-t8-TRq"/>
+                                            <outlet property="titleLabel" destination="sBn-lc-7Aa" id="E1T-bN-wwF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="EjE-mD-h8X" secondAttribute="trailing" id="2Nb-AD-bfc"/>
+                            <constraint firstItem="EjE-mD-h8X" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="KMc-MJ-qaR"/>
+                            <constraint firstItem="EjE-mD-h8X" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Obz-Je-wGb"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="EjE-mD-h8X" secondAttribute="bottom" id="gRm-33-Ezk"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="x5q-EH-pP8"/>
+                    <connections>
+                        <outlet property="tableView" destination="EjE-mD-h8X" id="c2c-SP-dO1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="819" y="-557"/>
+            <point key="canvasLocation" x="892.5" y="-558.80281690140851"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FpP-oR-azb">
@@ -44,4 +145,8 @@
             <point key="canvasLocation" x="132" y="-557"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fork" width="18" height="24"/>
+        <image name="star" width="21" height="24"/>
+    </resources>
 </document>
