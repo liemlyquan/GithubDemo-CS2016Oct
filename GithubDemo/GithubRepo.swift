@@ -10,8 +10,8 @@ import Foundation
 import AFNetworking
 
 private let reposUrl = "https://api.github.com/search/repositories"
-private let clientId: String? = nil
-private let clientSecret: String? = nil
+private let clientId: String = "bd356f708e7e4fe3b17c"
+private let clientSecret: String = "6000c50f340a53f453e73ce1e68111f2af41b0b1"
 
 // Model class that represents a GitHub repository
 class GithubRepo: CustomStringConvertible {
